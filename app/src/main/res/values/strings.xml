@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">beaconFinder</string>
+    <string name="title_activity_main">beaconFinder</string>
+    <string name="action_settings">Settings</string>
+</resources>
