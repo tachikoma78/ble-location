@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/6.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="03b365f02b08a9036a4ba2be3801be1e743a444f">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/16.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="08ab3a0e390dbc202afa40264204a7d483022232">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/18.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="89931899a99d94cd922ebc48315d37f1e2bab84b">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/9.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b54182575ec12345927b1547c301f3dec8c78ff4">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="25a5a5ae66c3337ae92ad2848679fed56a303223">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/14.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="72f673dc5b779799ab09887239319bfb2a23db1a">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/21.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="760da19005fcdb3f8062442bd1acd9abc983aa6c">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/11.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0425437379525cbbe7dfd6ae153a6b6233fed37a">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/5.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="41be69afd905ef219fd647d56cb95946e972163e">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/7.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2a405f58708bae0f380753e13f16eacf91f42a07">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/2.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cb6780e533ac95fa3347261758c3f4e4b173a8cc">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/19.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cd3ae73c41dbc8651c79e9742ce16ee96fca4694">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/19.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/10.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="709088d00fadd079dfd5083504544c390a5b7d96">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/10.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/13.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="812e9f864b5f3b512dc90bc4377b927d2d328c53">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/3.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="edbce09b80fd9ae9f803459dd4b353f732550708">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/8.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c6b2e6a960b27dec46b513c9c34cfd5b8ba3832e">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/4.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="903861243e6323d92484cbc8da135a847a296dd7">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/17.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bf5d06d3267dccbbd88b482280b978a7c1ea592e">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/15.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6011ede2e0fa9f5dc6d04a8067a23bcc1ab4d0bf">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/12.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="1faf840b5255cdd772790a68f1001b31e8119a4b">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/desugar/release/20.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="26.0.2"
+        sha1="1c58c9365714b9a4b65e8d36300445f55a9c0210">
+        <dex dex="/Users/pierrethereaper/AndroidStudioProjects/ble-location/app/build/intermediates/transforms/preDex/release/20.jar" />
+    </item>
+
+</items>

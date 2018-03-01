@@ -13,13 +13,14 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,63 +33,68 @@ public class MainActivity extends AppCompatActivity {
     boolean mScanning = false;
     private static final int REQUEST_ENABLE_BT = 1;
     private static final int REQUEST_FINE_LOCATION = 2;
-    private Map<String, BluetoothDevice> mScanResults;
+    private Map<String, String> mScanResults;
     private ScanCallback mScanCallback;
     private BluetoothLeScanner mBluetoothLeScanner;
     private Handler mHandler;
     private ScanSettings settings;
     private List<ScanFilter> filters;
+    private List<String> mDeviceList = new ArrayList<>();
+    private ArrayAdapter<String> mListAdapter;
     private static final int SCAN_PERIOD = 5000;
-
-    private static final String TAG = "MainActivity"; // constant
+    private static final String TAG = "MainActivity";
+    private ListView mDeviceLV;
+    private ProgressBar mProgress;
+    private Button scanBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mProgress = findViewById(R.id.progress);
 
-        TextView text = (TextView) findViewById(R.id.description);
+        // list
+        mDeviceLV = findViewById(R.id.deviceList);
+
+        mListAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mDeviceList);
+        mDeviceLV.setAdapter(mListAdapter);
 
         // ble adapter
         mBluetoothManager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
         mBluetoothAdapter = mBluetoothManager.getAdapter();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startScan(view);
-            }
-        });
-
-
+        scanBtn = findViewById(R.id.scan);
+        scanBtn.setOnClickListener(view -> startScan());
     }
-
 
     // is  the device is BLE capable ?
     @Override
     protected void onResume() {
         super.onResume();
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
-            finish();
+            finish(); // close activity
         }
     }
 
     // ensure we are not already scanning and permissions are granted
-    private void startScan(View view){
+    private void startScan(){
+
+        // hide list show progress
+        mProgress.setVisibility(View.VISIBLE);
+        scanBtn.setVisibility(View.INVISIBLE);
+        mDeviceLV.setVisibility(View.GONE);
+
         if(!hasPermissions() || mScanning){
-            Snackbar.make(view, "inform user", Snackbar.LENGTH_LONG)
-            .setAction("Bluetooth scan not possible", null).show();
             return;
         }
         // start the scan
-       mScanResults = new HashMap<>();
-       mScanCallback = new BtleScanCallback(mScanResults);
+        mScanResults = new HashMap<>();
+        // mScanResults = new ArrayList<>();
+        mScanCallback = new BtleScanCallback(mScanResults);
 
-       //TODO filter unwanted BLE signals from other sources
+        //TODO filter unwanted BLE signals from other sources
         filters = new ArrayList<>();
         settings = new ScanSettings.Builder().setScanMode(ScanSettings.SCAN_MODE_LOW_POWER).build();
 
@@ -128,10 +134,32 @@ public class MainActivity extends AppCompatActivity {
         requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_FINE_LOCATION) ;
     }
 
+    // Print
+    private void scanComplete(){
 
+        // hide list show progress
+        mProgress.setVisibility(View.GONE);
+        mDeviceLV.setVisibility(View.VISIBLE);
+        scanBtn.setVisibility(View.VISIBLE);
+        if(mScanResults.isEmpty()){
+            // TODO inform user that no results were found
+            return;
+        }
+
+        for(String deviceInfo : mScanResults.values()){
+            Log.d(TAG, mScanResults.toString() + "result: " + deviceInfo);
+            mListAdapter.add(deviceInfo);
+            mListAdapter.notifyDataSetChanged();
+        }
+    }
 
     private void stopScan(){
-        if(mScanning && mBluetoothAdapter != null && mBluetoothAdapter.isEnabled() && mBluetoothLeScanner != null){
+        if(mScanning
+                && mBluetoothAdapter != null
+                && mBluetoothAdapter.isEnabled()
+                && mBluetoothLeScanner != null)
+        {
+            mListAdapter.clear(); // first empty adapter
             mBluetoothLeScanner.stopScan(mScanCallback);
             scanComplete();
         }
@@ -141,43 +169,13 @@ public class MainActivity extends AppCompatActivity {
         mHandler = null;
     }
 
-
-    private void scanComplete(){
-        if(mScanResults.isEmpty()){
-            return;
-        }
-
-        for(BluetoothDevice device : mScanResults.values()){
-            String name = device.getName();
-            String adress = device.getAddress();
-            String toStr = device.toString();
-            Log.d(TAG, "name: "+ name + ", adress: "+adress + ", toStr: " +toStr);
-        }
-
-        /*
-        for(String deviceAdress : mScanResults.keySet()){
-            if(deviceAdress.equals("5A:74:FC:6A:A6:8C")){
-                Log.d(TAG, "Beacon A ");
-            }
-            if(deviceAdress.equals("7D:E5:40:FE:17:74")){
-                Log.d(TAG, "Gas meter "+ deviceAdress);
-            }
-            if(deviceAdress.equals("F2:23:75:D7:3C:34")){
-                Log.d(TAG, "Room 3 "+ deviceAdress);
-            }
-            //Log.d(TAG, "Found device "+ deviceAdress);
-        }*/
-    }
-
     // callbacks
     private class BtleScanCallback extends ScanCallback {
 
-        private Map<String, BluetoothDevice> mScanResults;
-
-        BtleScanCallback(Map<String, BluetoothDevice> scanResult){
+        BtleScanCallback(Map<String, String> scanResult){
             mScanResults = scanResult;
-        }
 
+        }
 
         @Override
         public void onScanResult(int callbackType, ScanResult result) {
@@ -197,9 +195,26 @@ public class MainActivity extends AppCompatActivity {
         }
 
         private void addScanResults(ScanResult result){
-            BluetoothDevice device = result.getDevice();
-            String deviceAdress = device.getAddress();
-            mScanResults.put(deviceAdress, device);
+
+        BluetoothDevice device = result.getDevice();
+        String deviceAdress = device.getAddress();
+        String rssi = String.valueOf(result.getRssi());
+
+        String name = result.getDevice().getName();
+        Log.d(TAG, " >>>>"+result.toString());
+        if(result.getDevice().getName() == null){
+          name = "";
+        }
+        StringBuilder sb= new StringBuilder();
+        sb.append(name);
+        sb.append("   ");
+        sb.append(deviceAdress);
+        sb.append("   ");
+        sb.append(rssi);
+
+            Log.d(TAG, " >>>>"+sb.toString());
+        mScanResults.put(deviceAdress, sb.toString());
+
         }
     }
 
